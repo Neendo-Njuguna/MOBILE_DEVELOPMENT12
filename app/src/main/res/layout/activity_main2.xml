@@ -63,7 +63,7 @@
         app:srcCompat="@drawable/ic_baseline_lock_24" />
 
     <Button
-        android:id="@+id/btnSignUp"
+        android:id="@+id/btnSignUp2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -75,10 +75,10 @@
         app:backgroundTint="#FF5722"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btLogIn" />
+        app:layout_constraintTop_toBottomOf="@+id/btnLogIn2" />
 
     <Button
-        android:id="@+id/btLogIn"
+        android:id="@+id/btnLogIn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

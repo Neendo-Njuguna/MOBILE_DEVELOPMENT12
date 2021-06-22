@@ -1,9 +1,9 @@
 package com.example.serianapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
-import com.google.android.material.textfield.TextInputLayout
 
 class MainActivity2 : AppCompatActivity() {
     lateinit var etName: EditText
@@ -11,8 +11,8 @@ class MainActivity2 : AppCompatActivity() {
     lateinit var etEmail: EditText
     lateinit var etPhone: EditText
     lateinit var etPassword: EditText
-    lateinit var btnSignUp: Button
-    lateinit var btnLogIn: Button
+    lateinit var btnSignUp2: Button
+    lateinit var btnLogIn2: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,18 +26,17 @@ class MainActivity2 : AppCompatActivity() {
         etEmail = findViewById(R.id.etEmail)
         etPhone = findViewById(R.id.etPhone)
         etPassword = findViewById(R.id.etPassword)
-        btnLogIn = findViewById(R.id.btLogIn)
-        btnSignUp = findViewById(R.id.btnSignUp)
+        btnLogIn2 = findViewById(R.id.btnLogIn2)
+        btnSignUp2 = findViewById(R.id.btnSignUp2)
 
-        var genders = arrayOf("Male", "Female", "I prefer not to say")
-        var gendersAdapter = ArrayAdapter(baseContext, android.R.layout.simple_spinner_item,genders)
-        gendersAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spGender.adapter = gendersAdapter
+        val genders = arrayOf("Male", "Female", "I prefer not to say")
+        val genderAdapter=ArrayAdapter(this, android.R.layout.simple_spinner_item, genders)
+        genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spGender.adapter=genderAdapter
         signup()
     }
-
     fun signup() {
-        btnSignUp.setOnClickListener {
+        btnSignUp2.setOnClickListener {
             var name = etName.text.toString()
             if(name.isEmpty()){
                 etName.setError("Input Name")
@@ -56,19 +55,19 @@ class MainActivity2 : AppCompatActivity() {
             if (password.isEmpty()) {
                 etPassword.setError("Input Password")
             } else {
-
-                Toast.makeText(baseContext, "Account Successfully Created!", Toast.LENGTH_LONG)
-                    .show()
-            }
+                    Toast.makeText(baseContext, "Account Successfully Created!", Toast.LENGTH_LONG)
+                        .show()
+                }
             logIn()
 
         }
     }
     fun logIn (){
-        btnLogIn = findViewById(R.id.btLogIn)
-        btnLogIn.setOnClickListener {
-            Toast.makeText(baseContext, "Please hold on a minute", Toast.LENGTH_LONG).show()
+        btnLogIn2= findViewById(R.id.btnLogIn2)
+        btnLogIn2.setOnClickListener {
+            val intent= Intent(baseContext, MainActivity::class.java)
+            startActivity(intent)
 
+            }
         }
     }
-}
